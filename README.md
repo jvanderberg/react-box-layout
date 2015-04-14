@@ -20,7 +20,7 @@ JSX usage:
 ```
 See the /demo directory for two relatively complex examples of usage.
 
-#Live
+#Live Demo
 Deeply Nested Layout: https://rawgit.com/jvanderberg/react-box-layout/master/demo/demo1.html
 More realistic example: https://rawgit.com/jvanderberg/react-box-layout/master/demo/demo2.html
 
