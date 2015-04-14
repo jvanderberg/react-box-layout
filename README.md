@@ -18,8 +18,12 @@ JSX usage:
 	<div id="content"></div>
 <Box.VBox>
 ```
-
 See the /demo directory for two relatively complex examples of usage.
+
+#Live
+Deeply Nested Layout: https://rawgit.com/jvanderberg/react-box-layout/master/demo/demo1.html
+More realistic example: https://rawgit.com/jvanderberg/react-box-layout/master/demo/demo2.html
+
 
 #Layout rules
 1. VBoxes layout their children as a column, HBoxes layout children as a row.
