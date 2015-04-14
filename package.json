@@ -1,0 +1,20 @@
+{
+  "name": "react-box-layout",
+  "version": "1.0.0",
+  "description": "React Layout Containers",
+  "main": "index.js",
+  "scripts": {
+    "build-demo1": "node_modules/.bin/browserify src/js/demo/demo1.js --debug -t babelify -o demo/demo1bundle.js",
+    "build-demo2": "node_modules/.bin/browserify src/js/demo/demo2.js --debug -t babelify -o demo/demo2bundle.js",
+    "build-lib": "node_modules/.bin/babel src/js/layout --out-dir lib",
+    "build-all": "npm run build-lib && npm run build-demo1 && npm run build-demo2"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.0.12",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "react": "^0.13.1"
+  }
+}
