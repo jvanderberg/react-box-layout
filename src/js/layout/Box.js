@@ -10,7 +10,11 @@ class Box extends Layout {
     render() {
         var className = this.props.className;
         var style = this.props.style;
-        style.position = 'absolute';
+        if (typeof(style) !== 'undefined') {
+            style.position = 'absolute';
+        } else {
+            style = {position: 'absolute'};
+        }
         return(
             <div {...this.props} style={style} className={className}>
                  {this.renderChildren(this.props.children)}
