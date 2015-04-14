@@ -105,23 +105,30 @@ class Layout extends React.Component{
   	}
   	
   	getMetrics() {
-  		var contentWidth = 0;
+  		
+        var contentWidth = 0;
         var contentHeight = 0;
-  		if (typeof(this.props.style)==='undefined') {
-  			var a = 1;
-  		}
-  		var height = this.props.style.height;
-        var width = this.props.style.width;
+        var height = 0;
+        var width = 0;
         var padding = 0;
-        if (typeof(this.props.style.padding) !== 'undefined') {
-        	padding = this.props.style.padding;
-        }
-
-    	contentWidth = width - 2 * padding;
-    	contentHeight = height - 2 * padding;
+  		
+        if (typeof(this.props.style)!=='undefined') {
+            if (typeof(this.props.style.height)!=='undefined') {
+                height = this.props.style.height;
+            }
+            if (typeof(this.props.style.width)!=='undefined') {
+                width = this.props.style.width;
+            }
+            if (typeof(this.props.style.padding) !== 'undefined') {
+                padding = this.props.style.padding;
+            }
+            contentWidth = width - 2 * padding;
+            contentHeight = height - 2 * padding;
         
-
+  		} 
+        
         return {height: height, width: width, contentHeight : contentHeight, contentWidth : contentWidth, padding: padding};
+
   	}
 
   	positionChildren(direction,childMetrics,parentMetrics) {
