@@ -14,7 +14,7 @@ var Box = require('react-box-layout');
 
 JSX usage:
 ```
-<Box.VBox>
+<Box.VBox style={{width:200,height:300}}>
 	<div id="content"></div>
 <Box.VBox>
 ```
@@ -29,12 +29,45 @@ See the /demo directory for two relatively complex examples of usage.
 5. If no explicit size is declared in the direction of layout, the child behaves as if flex:1 were set.
 6. In the non-layout direction, children are set to the size of their parent if no explicit size is declared.  For example, VBox sets the width of children without a width to the width of the VBox.
 
-Remember to style VBoxes, HBoxes, and their children using inline styles only.  There is no easy way for React to detect css styles without manipulating the DOM.  
+Remember to style VBoxes, HBoxes, and their children using inline styles only.  There is no easy way for React to detect css styles without manipulating the DOM.  You must style the root container with an explicit height/width.  A common patter is to pin it to the viewport:
+
+```
+"use strict";
+import React from 'react';
+import Box from '../../../';
+//import Box from 'react-box-layout'
+
+class Demo extends React.Component {
+	
+	render() {
+		return	(
+			<Box.VBox style={{width:window.innerWidth, height:window.innerHeight}}>
+				<div>
+					content
+				</div>
+			</Box.VBox>);
+  	}
+
+}
+
+function render(dummy) {
+	React.render(
+		<Demo />, 
+		document.getElementById('content')
+	);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	render();
+	window.addEventListener('resize', render);
+});
+
+```
 
 As these components use props.style to style children, if you want a custom child element to respect the layout you must pass on the styles in your JSX, example:
 
 ```
-<Box.VBox>
+<Box.VBox style={{width:200,height:300}}>
 	<CustomElement></CustomElemet>
 <Box.VBox>
 ```
