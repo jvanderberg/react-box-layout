@@ -8,7 +8,11 @@ class PropertyAnimator {
     	this.property = property;
     	this.fromvalue = fromvalue;
     	this.tovalue = tovalue;
-    	this.startTime = performance.now();
+        if (typeof(performance)!=='undefined') {
+            this.startTime = performance.now();
+        } else {
+            this.startTime = Date.now();
+        }
     	this.duration = duration;
     	if (typeof(easing) !== 'undefined' && typeof(easing)==='function') {
     		this.easing = easing;
@@ -19,7 +23,12 @@ class PropertyAnimator {
     } 
 
     handleAnimationStep(timestamp) {
-    	let duration = performance.now() - this.startTime;
+        let duration = 0;
+        if (typeof(performance)!=='undefined') {
+       	    duration = performance.now() - this.startTime;
+        } else {
+            duration = Date.now() - this.startTime;
+        }
     	if (duration < this.duration) {
     		let val = (this.tovalue - this.fromvalue) * this.easing(duration / this.duration) + this.fromvalue;
     		this.setValue(val);
