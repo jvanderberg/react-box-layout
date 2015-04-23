@@ -2,125 +2,127 @@
 import React from 'react';
 import Box from '../../../';
 
+var HBox = Box.HBox;
+var VBox = Box.VBox;
 function render(dummy) {
 	React.render(
-		<Box.HBox style={{width:window.innerWidth, height:window.innerHeight}}>
-			<Box.VBox >
+		<HBox style={{width:window.innerWidth, height:window.innerHeight}}>
+			<VBox >
 				<div className="demo"></div>
 				<div className="demo"></div>
 				<div className="demo"></div>
-			</Box.VBox>
-			<Box.VBox style={{flex:4}}>
+			</VBox>
+			<VBox style={{flex:4}}>
 				<div className="demo"></div>
-				<Box.HBox style={{flex:4}}>
-					<Box.VBox >
+				<HBox style={{flex:4}}>
+					<VBox >
 						<div className="demo"></div>
 						<div className="demo"></div>
 						<div className="demo"></div>
-					</Box.VBox>
-					<Box.VBox style={{flex:4}}>
+					</VBox>
+					<VBox style={{flex:4}}>
 						<div className="demo"></div>
-						<Box.HBox style={{flex:4}}>
-							<Box.VBox >
+						<HBox style={{flex:4}}>
+							<VBox >
 								<div className="demo"></div>
 								<div className="demo"></div>
 								<div className="demo"></div>
-							</Box.VBox>
-							<Box.VBox style={{flex:4}}>
+							</VBox>
+							<VBox style={{flex:4}}>
 								<div className="demo"></div>
-								<Box.HBox style={{flex:4}}>
-									<Box.VBox >
+								<HBox style={{flex:4}}>
+									<VBox >
 										<div className="demo"></div>
 										<div className="demo"></div>
 										<div className="demo"></div>
-									</Box.VBox>
-									<Box.VBox style={{flex:4}}>
+									</VBox>
+									<VBox style={{flex:4}}>
 										<div className="demo"></div>
-										<Box.HBox style={{flex:4}}>
-											<Box.VBox >
+										<HBox style={{flex:4}}>
+											<VBox >
 												<div className="demo"></div>
 												<div className="demo"></div>
 												<div className="demo"></div>
-											</Box.VBox>
-											<Box.VBox style={{flex:4}}>
+											</VBox>
+											<VBox style={{flex:4}}>
 												<div className="demo"></div>
 
 
-												<Box.HBox style={{flex:4}}>
-													<Box.VBox >
+												<HBox style={{flex:4}}>
+													<VBox >
 														<div className="demo"></div>
 														<div className="demo"></div>
 														<div className="demo"></div>
-													</Box.VBox>
-													<Box.VBox style={{flex:4}}>
+													</VBox>
+													<VBox style={{flex:4}}>
 														<div className="demo"></div>
-														<Box.HBox style={{flex:4}}>
-															<Box.VBox >
+														<HBox style={{flex:4}}>
+															<VBox >
 																<div className="demo"></div>
 																<div className="demo"></div>
 																<div className="demo"></div>
-															</Box.VBox>
-															<Box.VBox style={{flex:4}}>
+															</VBox>
+															<VBox style={{flex:4}}>
 																<div className="demo"></div>
 																<div className="demo" style={{flex:4}}></div>
 																<div className="demo"></div>
-															</Box.VBox>
-															<Box.VBox>
+															</VBox>
+															<VBox>
 																<div className="demo"></div>
 																<div className="demo"></div>
 																<div className="demo"></div>
-															</Box.VBox>
-														</Box.HBox>
+															</VBox>
+														</HBox>
 														<div className="demo"></div>
-													</Box.VBox>
-													<Box.VBox>
+													</VBox>
+													<VBox>
 														<div className="demo"></div>
 														<div className="demo"></div>
 														<div className="demo"></div>
-													</Box.VBox>
-												</Box.HBox>
+													</VBox>
+												</HBox>
 
 
 												<div className="demo"></div>
-											</Box.VBox>
-											<Box.VBox>
+											</VBox>
+											<VBox>
 												<div className="demo"></div>
 												<div className="demo"></div>
 												<div className="demo"></div>
-											</Box.VBox>
-										</Box.HBox>
+											</VBox>
+										</HBox>
 										<div className="demo"></div>
-									</Box.VBox>
-									<Box.VBox>
+									</VBox>
+									<VBox>
 										<div className="demo"></div>
 										<div className="demo"></div>
 										<div className="demo"></div>
-									</Box.VBox>
-								</Box.HBox>
+									</VBox>
+								</HBox>
 								<div className="demo"></div>
-							</Box.VBox>
-							<Box.VBox>
+							</VBox>
+							<VBox>
 								<div className="demo"></div>
 								<div className="demo"></div>
 								<div className="demo"></div>
-							</Box.VBox>
-						</Box.HBox>
+							</VBox>
+						</HBox>
 						<div className="demo"></div>
-					</Box.VBox>
-					<Box.VBox>
+					</VBox>
+					<VBox>
 						<div className="demo"></div>
 						<div className="demo"></div>
 						<div className="demo"></div>
-					</Box.VBox>
-				</Box.HBox>
+					</VBox>
+				</HBox>
 				<div className="demo"></div>
-			</Box.VBox>
-			<Box.VBox>
+			</VBox>
+			<VBox>
 				<div className="demo"></div>
 				<div className="demo"></div>
 				<div className="demo"></div>
-			</Box.VBox>
-		</Box.HBox>, 
+			</VBox>
+		</HBox>, 
 		document.getElementById('content')
 	);
 }

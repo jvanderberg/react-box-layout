@@ -1,7 +1,10 @@
 "use strict";
 import React from 'react';
 import Box from '../../../';
+import PropertyAnimator from './PropertyAnimator.js';
 //import Box from 'react-box-layout'
+var HBox = Box.HBox;
+var VBox = Box.VBox;
 
 class Demo2class extends React.Component {
 	
@@ -11,54 +14,60 @@ class Demo2class extends React.Component {
 		this.originalSidePanelWidth = this.props.sidePanelWidth;
 	}
 	handleToggle(event) {
+		if (this.state.sidePanelWidth===0) {
+			this.animator = new PropertyAnimator(this,'sidePanelWidth',0,Number(this.originalSidePanelWidth),400,PropertyAnimator.easeInOutQuad);
+		} else {
+			this.animator = new PropertyAnimator(this,'sidePanelWidth',Number(this.originalSidePanelWidth),0,400,PropertyAnimator.easeInOutQuad);
+
+		}
 		this.setState({sidePanelWidth:(this.state.sidePanelWidth>0?0:this.originalSidePanelWidth)});
 	}
 
 	render() {
 		return	(
-			<Box.VBox style={{width:window.innerWidth, height:window.innerHeight}}>
-				<Box.HBox style={{height:100, backgroundColor: '#AAAAFF'}}>
-					<Box.VBox style={{height:100}}>
+			<VBox style={{width:window.innerWidth, height:window.innerHeight}}>
+				<HBox style={{height:100, backgroundColor: '#AAAAFF'}}>
+					<VBox style={{height:100}}>
 						<div style={{width:10}}></div>
 						<div style={{height:20}}>
 							<input type='button' value="Toggle Sidepanel" onClick={event=>this.handleToggle(event)} ></input>
 						</div>
 						<div style={{width:10}}></div>
-					</Box.VBox>
-					<Box.VBox style={{height:100,width:400}}>
+					</VBox>
+					<VBox style={{height:100,width:400}}>
 						<div style={{width:300}}></div>
 						<div style={{width:400,height:45,fontSize:40,fontWeight:'bold'}} >A Centered Header</div>
 						<div style={{width:300}}></div>
-					</Box.VBox>
+					</VBox>
 					<div style={{height:100}}></div>
-				</Box.HBox>
-				<Box.HBox>
-					<Box.VBox ref='sidePanel' style={{width:this.state.sidePanelWidth,backgroundColor:'#7676A6',display:(this.state.sidePanelWidth===0)?"none":""}}>
-						<Box.VBox>
+				</HBox>
+				<HBox>
+					<VBox ref='sidePanel' style={{width:this.state.sidePanelWidth,backgroundColor:'#7676A6',overflow:'hidden',display:(this.state.sidePanelWidth===0)?"none":""}}>
+						<VBox>
 							<div></div>
-							<Box.HBox>
+							<HBox>
 								<div></div>
 								<div style={{fontSize:40,height:45, width:100,fontWeight:'bold'}}>
 									Side Panel
 								</div>
 								<div></div>
-							</Box.HBox>
+							</HBox>
 							<div></div>
-						</Box.VBox>
-					</Box.VBox>
-					<Box.VBox>
+						</VBox>
+					</VBox>
+					<VBox>
 						<div></div>
-						<Box.HBox>
+						<HBox>
 							<div></div>
 							<div style={{fontSize:40,height:45, width:100,fontWeight:'bold'}}>
 								Body
 							</div>
 							<div></div>
-						</Box.HBox>
+						</HBox>
 						<div></div>
-					</Box.VBox>
-				</Box.HBox>
-			</Box.VBox>);
+					</VBox>
+				</HBox>
+			</VBox>);
   	}
 
 }
