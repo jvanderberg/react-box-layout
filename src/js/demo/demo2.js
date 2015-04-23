@@ -18,9 +18,7 @@ class Demo2class extends React.Component {
 			this.animator = new PropertyAnimator(this,'sidePanelWidth',0,Number(this.originalSidePanelWidth),400,PropertyAnimator.easeInOutQuad);
 		} else {
 			this.animator = new PropertyAnimator(this,'sidePanelWidth',Number(this.originalSidePanelWidth),0,400,PropertyAnimator.easeInOutQuad);
-
 		}
-		this.setState({sidePanelWidth:(this.state.sidePanelWidth>0?0:this.originalSidePanelWidth)});
 	}
 
 	render() {

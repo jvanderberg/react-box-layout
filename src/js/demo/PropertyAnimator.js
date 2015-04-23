@@ -1,4 +1,5 @@
 "use strict";
+/* global performance */
 class PropertyAnimator {
 	
 
@@ -7,7 +8,7 @@ class PropertyAnimator {
     	this.property = property;
     	this.fromvalue = fromvalue;
     	this.tovalue = tovalue;
-    	this.startTime = Date.now();
+    	this.startTime = performance.now();
     	this.duration = duration;
     	if (typeof(easing) !== 'undefined' && typeof(easing)==='function') {
     		this.easing = easing;
@@ -17,8 +18,8 @@ class PropertyAnimator {
     	window.requestAnimationFrame(this.handleAnimationStep.bind(this));
     } 
 
-    handleAnimationStep() {
-    	let duration = Date.now() - this.startTime;
+    handleAnimationStep(timestamp) {
+    	let duration = performance.now() - this.startTime;
     	if (duration < this.duration) {
     		let val = (this.tovalue - this.fromvalue) * this.easing(duration / this.duration) + this.fromvalue;
     		this.setValue(val);
@@ -32,6 +33,7 @@ class PropertyAnimator {
 		let state = this.component.state;
 		state[this.property] = value;
 		this.component.setState(state);
+		console.log('PropertyAnimator ' + this.property +'='+value);
 	}
 
 }
