@@ -40,7 +40,7 @@ class Demo2class extends React.Component {
 					<div style={{height:100}}></div>
 				</HBox>
 				<HBox>
-					<VBox ref='sidePanel' style={{width:this.state.sidePanelWidth,backgroundColor:'#7676A6',overflow:'hidden',display:(this.state.sidePanelWidth===0)?"none":""}}>
+					<VBox style={{width:this.state.sidePanelWidth,backgroundColor:'#7676A6',overflow:'hidden',display:(this.state.sidePanelWidth===0)?"none":""}}>
 						<VBox>
 							<div></div>
 							<HBox>

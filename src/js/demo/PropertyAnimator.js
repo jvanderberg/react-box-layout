@@ -33,7 +33,6 @@ class PropertyAnimator {
 		let state = this.component.state;
 		state[this.property] = value;
 		this.component.setState(state);
-		console.log('PropertyAnimator ' + this.property +'='+value);
 	}
 
 }

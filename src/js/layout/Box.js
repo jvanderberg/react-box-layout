@@ -8,7 +8,6 @@ class Box extends Layout {
     } 
 
     render() {
-        console.log('Box metrics - width:'+this.props.style.width+ ' height:'+this.props.style.height );
         var className = this.props.className;
         var style = this.props.style;
         if (typeof(style) !== 'undefined') {
